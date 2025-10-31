@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Battle Ki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ultimate Battle Ki</h1>
+        <nav class="tabs" role="tablist" aria-label="Navegación principal">
+            <button class="tab" role="tab" data-target="inicio" aria-pressed="true">Inicio</button>
+            <button class="tab" role="tab" data-target="desarrollo" aria-pressed="false">Desarrollo</button>
+            <button class="tab" role="tab" data-target="galeria" aria-pressed="false">Galería</button>
+            <button class="tab" role="tab" data-target="descarga" aria-pressed="false">Descarga</button>
+            <button class="tab" role="tab" data-target="comentarios" aria-pressed="false">Comentarios</button>
+        </nav>
+    </header>
+
+    <main class="marcos">
+        <section id="inicio" class="marco" role="tabpanel" aria-hidden="false">
+            <h2 class="rainbow-title">EL JUEGO DEFINITIVO DE DRAGON BALL</h2>
+            <p>
+                <strong>"Ultimate Battle Ki"</strong> es un juego PvP local de combates intensos inspirado en el universo de Dragon Ball y en títulos como Dragon Ball FighterZ y el fanmade Dragon Ball Devolution.
+                Desarrollado por Stefa en <em>Godot Engine</em>, el juego ofrece duelos cortos y explosivos donde la velocidad de reacción y la estrategia son la clave para la victoria. 
+                Podrás enfrentarte a otro jugador en combates llenos de energía Ki, usando ataques a distancia, esquives, golpes cargados y una variedad de personajes y escenarios para elegir. Cada batalla busca capturar la emoción de los enfrentamientos de anime: rápidos, visualmente impactantes y llenos de poder.
+            </p>
+        </section>
+
+        <section id="desarrollo" class="marco" role="tabpanel" aria-hidden="true">
+            <h2>Sobre el desarrollo</h2>
+            <p>
+                Ultimate Battle Ki se encuentra actualmente en desarrollo desde finales de 2024, creado por una sola persona (Stefa) en <strong>Godot Engine</strong>.
+                El proyecto continúa expandiéndose con nuevos personajes como Freezer, Majin Buu, Vegeta, Gohan y más, junto a una variedad de escenarios icónicos inspirados en el anime, algunos con mecánicas únicas de batalla y versiones alternativas según el contexto temporal (Namek, Vegeta, Planeta de Bills, entre otros).
+                También se están trabajando mejoras visuales y de interfaz, incluyendo un nuevo menú, selección de personajes y mapas, sistema de instrucciones y banda sonora.
+                Se espera que la versión final del juego esté disponible a finales de este año.
+            </p>
+            <ul>
+                <li>Motor: Godot 4.5</li>
+                <li>Lenguaje: GDScript</li>
+                <li>Inspiraciones: Dragon Ball, Street Fighter, Skullgirls, Dragon Ball Devolution</li>
+            </ul>
+        </section>
+
+        <section id="galeria" class="marco" role="tabpanel" aria-hidden="true">
+            <h2>Galería</h2>
+            <div class="galeria">
+                <img src="img/menu.png" alt="menu principal">
+                <img src="img/ingame.png" alt="Pantalla de selección de personajes"> 
+                <img src="img/ingame2.png" alt="pelea en progreso">
+                <img src="img/victory.png" alt="Pantalla de victoria">
+            </div>
+        </section>
+
+        <section id="descarga" class="marco" role="tabpanel" aria-hidden="true">
+            <h2>Descarga el juego</h2>
+            <p>Haz clic en el botón de abajo para descargar "Ultimate Battle Ki".</p>
+            <a href="download/archivo.rar" class="boton-descarga" id="btnDescarga">
+                <span class="icono-descarga">⬇️</span>
+                <span class="texto-descarga">Descargar el juego</span>
+                <span class="tamano-archivo">25MB</span>
+            </a>
+        </section>
+
+        <section id="comentarios" class="marco" role="tabpanel" aria-hidden="true">
+            <h2>Deja tu comentario</h2>
+            <form id="formComentario">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <textarea id="mensaje" placeholder="Escribe tu opinión..." required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="listaComentarios"></div>
+        </section>
+    </main>
+
+    <div class="audio-control">
+        <audio id="bgm" loop src="audio/musica.mp3" preload="auto"></audio>
+        <button id="btnAudio" aria-pressed="false" title="Reproducir/pausar música">🔈</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Ultimate Battle Ki | Creado por Stefa</p>
+    </footer>
+
+    <script src="script.js" crossorigin="anonymous"></script>
+</body>
+</html>
