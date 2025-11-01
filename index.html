@@ -53,15 +53,33 @@
             </div>
         </section>
 
-        <section id="descarga" class="marco" role="tabpanel" aria-hidden="true">
-            <h2>Descarga el juego</h2>
-            <p>Haz clic en el botón de abajo para descargar "Ultimate Battle Ki".</p>
-            <a href="download/archivo.rar" class="boton-descarga" id="btnDescarga">
-                <span class="icono-descarga">⬇️</span>
-                <span class="texto-descarga">Descargar el juego</span>
-                <span class="tamano-archivo">25MB</span>
-            </a>
-        </section>
+        <section id="descarga">
+            <h2>⚔️ Descarga Ultimate Battle Ki</h2>
+            <p>Prepárate para la batalla. Elige tu versión:</p>
+
+            <div class="botones-descarga">
+                <a href="download/archivo_Windows.zip" download id="winBtn" class="btn-descarga">
+                💻 Descargar para Windows
+                </a>
+                <a href="download/archivo_Linux.zip" download id="linuxBtn" class="btn-descarga">
+                🐧 Descargar para Linux
+                </a>
+            </div>
+
+            <p id="mensajeDescarga" class="mensaje-descarga"></p>
+
+            <div class="requisitos">
+                <h3>Requisitos mínimos</h3>
+                <ul>
+                <li>SO: Windows 10 / Linux Ubuntu 20.04</li>
+                <li>Procesador: Intel i3 o superior</li>
+                <li>RAM: 4 GB</li>
+                <li>GPU: Compatible con OpenGL 3.3+</li>
+                <li>Espacio: 500 MB</li>
+                </ul>
+            </div>
+            </section>
+
 
         <section id="comentarios" class="marco" role="tabpanel" aria-hidden="true">
             <h2>Deja tu comentario</h2>
@@ -78,6 +96,15 @@
         <audio id="bgm" loop src="audio/musica.mp3" preload="auto"></audio>
         <button id="btnAudio" aria-pressed="false" title="Reproducir/pausar música">🔈</button>
     </div>
+
+    <!-- Visor de imagen expandida -->
+    <div id="visor" class="visor oculto">
+        <span id="cerrarVisor" class="cerrar">&times;</span>
+        <img id="imagenAmpliada" src="" alt="Imagen ampliada">
+        <button id="anterior" class="navegacion">&#10094;</button>
+        <button id="siguiente" class="navegacion">&#10095;</button>
+    </div>
+
 
     <footer>
         <p>© 2025 Ultimate Battle Ki | Creado por Stefa</p>
