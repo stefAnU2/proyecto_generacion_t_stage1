@@ -121,3 +121,73 @@ document.addEventListener("DOMContentLoaded", () => {
         if (document.getElementById(id)) showMarco(id, false);
     });
 });
+
+// --- GALERÍA EXPANDIBLE ---
+const imagenes = document.querySelectorAll(".galeria img");
+const visor = document.getElementById("visor");
+const imagenAmpliada = document.getElementById("imagenAmpliada");
+const btnCerrar = document.getElementById("cerrarVisor");
+const btnAnterior = document.getElementById("anterior");
+const btnSiguiente = document.getElementById("siguiente");
+
+let indiceActual = 0;
+
+// Abrir visor al hacer clic en una imagen
+imagenes.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        indiceActual = index;
+        mostrarImagen();
+    });
+});
+
+function mostrarImagen() {
+    const imagen = imagenes[indiceActual];
+    imagenAmpliada.src = imagen.src;
+    visor.classList.remove("oculto");
+}
+
+// Cerrar visor
+btnCerrar.addEventListener("click", () => visor.classList.add("oculto"));
+visor.addEventListener("click", (e) => {
+    if (e.target === visor) visor.classList.add("oculto");
+});
+
+// Navegación con botones
+btnAnterior.addEventListener("click", () => cambiarImagen(-1));
+btnSiguiente.addEventListener("click", () => cambiarImagen(1));
+
+function cambiarImagen(direccion) {
+    indiceActual += direccion;
+    if (indiceActual < 0) indiceActual = imagenes.length - 1;
+    if (indiceActual >= imagenes.length) indiceActual = 0;
+    mostrarImagen();
+}
+
+// --- Navegación con teclado ---
+document.addEventListener("keydown", (e) => {
+    if (visor.classList.contains("oculto")) return; // solo si está abierto
+    if (e.key === "ArrowLeft") cambiarImagen(-1);
+    if (e.key === "ArrowRight") cambiarImagen(1);
+    if (e.key === "Escape") visor.classList.add("oculto");
+});
+
+
+document.getElementById("winBtn").addEventListener("click", function() {
+  mostrarMensaje("Descargando versión de Windows...");
+  // Simula una descarga real:
+  setTimeout(() => {
+    mostrarMensaje("✅ ¡Descarga completada!");
+  }, 2000);
+});
+
+document.getElementById("linuxBtn").addEventListener("click", function() {
+  mostrarMensaje("Descargando versión de Linux...");
+  setTimeout(() => {
+    mostrarMensaje("✅ ¡Descarga completada!");
+  }, 2000);
+});
+
+function mostrarMensaje(texto) {
+  const msg = document.getElementById("mensajeDescarga");
+  msg.textContent = texto;
+}
